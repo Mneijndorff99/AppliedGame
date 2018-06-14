@@ -6,21 +6,17 @@ public class UIMainScene : MonoBehaviour {
     GameObject Menubtn;
     public GameObject MenuUI;
 
-    public bool isPaused = false;
+    public GameObject foodTab;
+    public GameObject furnitureTab;
 
-    // Use this for initialization
-    void Start() {
+    [SerializeField]List<string> Inventory;
 
-    }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
+    public bool menuOpend = false;
 
     public void Menu()
     {
-        if (isPaused)
+        if (menuOpend)
         {
             Resume();
         }
@@ -33,12 +29,64 @@ public class UIMainScene : MonoBehaviour {
     public void Resume()
     {
         MenuUI.SetActive(false);
-        isPaused = false;
+        menuOpend = false;
     }
 
     public void Pause()
     {
         MenuUI.SetActive(true);
-        isPaused = true;
+        menuOpend = true;
+    }
+
+    public void Price(int price)
+    {
+        PlayerManager.money = PlayerManager.money -price;
+    }
+
+    public void AddedFood(float addFoodTotal)
+    {
+        PlayerManager.FoodBar += addFoodTotal;
+    }
+
+    public void Foodtab()
+    {
+        foodTab.SetActive(true);
+        furnitureTab.SetActive(false);
+    }
+
+    public void FurnitureTab()
+    {
+        furnitureTab.SetActive(true);
+        foodTab.SetActive(false);
+    }    
+    
+    public void AddFurniture(string furnitureName)
+    {
+        string name = furnitureName;
+
+        switch (name)
+        {
+            case "Table":
+                Inventory.Add("Table");
+                break;
+            case "Chair":
+                Inventory.Add("Chair");
+                break;
+            case "Mirror":
+                Inventory.Add("Mirror");
+                break;
+            case "Bed":
+                Inventory.Add("Bed");
+                break;
+            case "TV":
+                Inventory.Add("TV");
+                break;
+            case "Closet":
+                Inventory.Add("Closet");
+                break;
+            case "Couch":
+                Inventory.Add("Couch");
+                break;
+        }
     }
 }
