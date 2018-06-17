@@ -14,28 +14,17 @@ public class UIMainScene : MonoBehaviour {
 
     public bool menuOpend = false;
 
-    public void Menu()
+    public void Menu(GameObject ChooseMenu)
     {
         if (menuOpend)
         {
-            Resume();
+            ChooseMenu.SetActive(false);
+            menuOpend = false;
         }
         else{
-            Pause();
+            ChooseMenu.SetActive(true);
+            menuOpend = true;
         }
-    }
-
-
-    public void Resume()
-    {
-        MenuUI.SetActive(false);
-        menuOpend = false;
-    }
-
-    public void Pause()
-    {
-        MenuUI.SetActive(true);
-        menuOpend = true;
     }
 
     public void Price(int price)
