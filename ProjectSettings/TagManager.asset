@@ -6,6 +6,15 @@ TagManager:
   tags:
   - MenuUI
   - Menubtn
+  - Table
+  - Chair
+  - Mirror
+  - Bed
+  - TV
+  - Closet
+  - Couch
+  - Lamp
+  - Refrigerator
   layers:
   - Default
   - TransparentFX

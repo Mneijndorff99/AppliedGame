@@ -5,16 +5,50 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
 
-    public static float FoodBar = 100;
+    public static float foodBar = 100;
+    public static float moodbar = 150;
     public static int money;
 
+    int happyNessDown = 1;
+
     public Slider foodSlider;
+    public Slider moodSlider;
 
+    public Sprite happy;
+    public Sprite mweh;
+    public Sprite sad;
 
+    public Image disPlayMood;
 
-	// Update is called once per frame
-	void Update () {
-        FoodBar -= 1 * Time.deltaTime;
-        foodSlider.value = FoodBar;
-	}
+    private void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update () {
+        foodBar -= 1 * Time.deltaTime;
+        foodSlider.value = foodBar;
+
+        moodbar -= happyNessDown * Time.deltaTime;
+        moodSlider.value = moodbar;
+
+        if(foodBar > 60)
+        {
+            happyNessDown = 1;
+            disPlayMood.sprite = happy;
+        }
+        if(foodBar < 60 && foodBar > 25)
+        {
+            happyNessDown = 2;
+            disPlayMood.sprite = mweh;
+
+        }
+        if (foodBar < 25)
+        {
+            happyNessDown = 4;
+            disPlayMood.sprite = sad;
+
+        }
+    }
 }
