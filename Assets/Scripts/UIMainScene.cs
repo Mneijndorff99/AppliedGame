@@ -13,6 +13,8 @@ public class UIMainScene : MonoBehaviour {
     public GameObject foodTab;
     public GameObject furnitureTab;
 
+    public GameObject infoPanel;
+
     [SerializeField]List<string> Inventory;
 
     private void Awake()
@@ -27,6 +29,8 @@ public class UIMainScene : MonoBehaviour {
         inventoryButtons.Add("Couch", GameObject.FindGameObjectWithTag("Couch").GetComponent<Button>());
 
         scrollview.SetActive(false);
+
+        
 
     }
 
@@ -61,6 +65,7 @@ public class UIMainScene : MonoBehaviour {
     public void AddedFood(float addFoodTotal)
     {
         PlayerManager.foodBar += addFoodTotal;
+        PlayerManager.moodbar += addFoodTotal / 2;
     }
 
     public void Foodtab()
@@ -81,5 +86,13 @@ public class UIMainScene : MonoBehaviour {
 
         Inventory.Add(name);
         inventoryButtons[name].interactable = true;
+    }
+
+    public void ExitInfoPanel()
+    {
+        this.GetComponent<PlayerManager>().enabled = true;
+        this.GetComponent<MoneyManager>().enabled = true;
+        this.GetComponent<EventScript>().enabled = true;
+        Destroy(infoPanel);
     }
 }

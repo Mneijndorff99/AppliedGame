@@ -33,22 +33,20 @@ public class PlayerManager : MonoBehaviour {
         moodbar -= happyNessDown * Time.deltaTime;
         moodSlider.value = moodbar;
 
-        if(foodBar > 60)
+        if(moodbar > 120)
         {
             happyNessDown = 1;
             disPlayMood.sprite = happy;
         }
-        if(foodBar < 60 && foodBar > 25)
+        if(moodbar < 120 && foodBar > 30)
         {
             happyNessDown = 2;
             disPlayMood.sprite = mweh;
-
         }
-        if (foodBar < 25)
+        if (moodbar < 30)
         {
-            happyNessDown = 4;
+            happyNessDown = 3;
             disPlayMood.sprite = sad;
-
         }
     }
 }

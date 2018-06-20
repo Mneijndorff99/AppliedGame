@@ -3,52 +3,133 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EventScript : MonoBehaviour {
+public class EventScript : MonoBehaviour
+{
 
-    public List<string> dagen = new List<string>() { "Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo" };
+    public MoneyManager moneyScript;
 
-    public string dag;
+    public List<string> days = new List<string>() { "Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo" };
+    public string day;
+    int dayNum;
 
-    int dagNummer;
+    public int weekNum;
+
+    public List<string> months = new List<string>() { "Jan", "Feb", "Mrt", "Apr", "Mei", "Jun", "Jul", "Aug", "Spt", "Okt", "Nov", "Dec" };
+    public string month;
+    int monthNum;
+
+    public bool AllowNextDayBool;
+
+    public bool eventBool;
+
 
     float clockTimer;
-    public Text timeOfDay;
+    public Text currentDateText;
 
-	// Use this for initialization
-	void Start () 
+
+
+    public int timeSpeed = 60;
+
+    // Use this for initialization
+    void Start()
     {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () 
+        weekNum = 1;
+    }
+
+
+    // Update is called once per frame
+    void Update()
     {
-        clockTimer += Time.deltaTime*600;
+        day = days[dayNum];
+        month = months[monthNum];
+
+
+
+        clockTimer += Time.deltaTime * timeSpeed;
         int seconds = (int)(clockTimer % 60);
         int minutes = (int)(clockTimer / 60) % 60;
         int hours = (int)(clockTimer / 3600) % 24;
 
-        string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
+        string CurrentTimeString = string.Format("{0:0}:{1:00}", hours, minutes);
 
-        timeOfDay.text = timerString;
-        dag = dagen[dagNummer];
+        currentDateText.text = month + ", " + day + ", " + CurrentTimeString;
 
 
-        if(hours == 23 && minutes == 59)
+        //changes day, week and month with NextDay(), NextWeek(), NextMonth()
+        if (hours == 23 && minutes == 59 && seconds == 59 && AllowNextDayBool == true)
         {
             NextDay();
+            AllowNextDayBool = false;
+            eventBool = false;
         }
 
-	}
+        if (hours == 0 && minutes == 1 && seconds == 1)
+        {
+            AllowNextDayBool = true;
+            eventBool = true;
+        }
+
+
+        if (dayNum == 3 && weekNum == 3 && eventBool == true)
+        {
+            eventBool = false;
+            moneyScript.StudieFin();
+        }
+        if (dayNum == 2 && weekNum == 4 && eventBool == true)
+        {
+            eventBool = false;
+            moneyScript.Loon();
+        }
+        if (dayNum == 0 && weekNum == 3 && eventBool == true)
+        {
+            eventBool = false;
+            moneyScript.Belastingsdients();
+        }
+        if (dayNum == 5 && weekNum == 2 && eventBool == true)
+        {
+            eventBool = false;
+            moneyScript.StudieBetalen();
+        }
+        if (dayNum == 1 && weekNum == 3 && eventBool == true)
+        {
+            eventBool = false;
+            moneyScript.Zorgtoeslag();
+        }
+        if (dayNum == 4 && weekNum == 2 && eventBool == true)
+        {
+            eventBool = false;
+            moneyScript.HuisHuur();
+        }
+
+
+    }
 
     void NextDay()
     {
-        Debug.Log("werkt");
-        dagNummer++;
-        if (dagNummer == 6)
+        dayNum++;
+
+        if (dayNum == 7)
         {
-            dagNummer = 0;
+            dayNum = 0;
+            NextWeek();
         }
-        Debug.Log(dagNummer);
     }
+
+    void NextWeek()
+    {
+        weekNum++;
+        if (weekNum == 5)
+        {
+            weekNum = 1;
+            NextMonth();
+        }
+    }
+
+    void NextMonth()
+    {
+        monthNum++;
+        if (monthNum == 12) ;
+    }
+
+
 }
