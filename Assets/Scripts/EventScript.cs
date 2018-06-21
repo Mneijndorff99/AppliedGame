@@ -22,6 +22,9 @@ public class EventScript : MonoBehaviour
 
     public bool eventBool;
 
+    public Text eventText;
+    int differentText;
+
 
     float clockTimer;
     public Text currentDateText;
@@ -63,45 +66,71 @@ public class EventScript : MonoBehaviour
             eventBool = false;
         }
 
+        //reset
         if (hours == 0 && minutes == 1 && seconds == 1)
         {
             AllowNextDayBool = true;
             eventBool = true;
         }
 
-
+        //reset event text
+        if (hours == 0 && minutes == 9 && seconds == 59)
+        {
+            eventText.text = " ";
+        }
+        //events
         if (dayNum == 3 && weekNum == 3 && eventBool == true)
         {
             eventBool = false;
             moneyScript.StudieFin();
+            differentText = 1;
+            DisplayTextMessage();
         }
         if (dayNum == 2 && weekNum == 4 && eventBool == true)
         {
             eventBool = false;
             moneyScript.Loon();
+            differentText = 2;
+            DisplayTextMessage();
         }
         if (dayNum == 0 && weekNum == 3 && eventBool == true)
         {
             eventBool = false;
             moneyScript.Belastingsdients();
+            differentText = 3;
+            DisplayTextMessage();
         }
         if (dayNum == 5 && weekNum == 2 && eventBool == true)
         {
             eventBool = false;
             moneyScript.StudieBetalen();
+            differentText = 4;
+            DisplayTextMessage();
+
         }
         if (dayNum == 1 && weekNum == 3 && eventBool == true)
         {
             eventBool = false;
             moneyScript.Zorgtoeslag();
+            differentText = 5;
+            DisplayTextMessage();
+
         }
         if (dayNum == 4 && weekNum == 2 && eventBool == true)
         {
             eventBool = false;
             moneyScript.HuisHuur();
+            differentText = 6;
+            DisplayTextMessage();
+
         }
 
+        if (dayNum == 6 && weekNum == 2 && eventBool == true)
+        {
+            eventBool = false;
+            Debug.Log("Je bent nu halverwegen de eerste maand, Hoeveel geld denk je op het moment nog te hebben?");
 
+        }
     }
 
     void NextDay()
@@ -132,4 +161,34 @@ public class EventScript : MonoBehaviour
     }
 
 
+    void DisplayTextMessage()
+    {
+        switch (differentText)
+        {
+            case 1:
+                eventText.color = Color.green;
+                eventText.text = "You recieved your college money for this month +" + moneyScript.studieFin;
+                break;
+            case 2:
+                eventText.color = Color.green;
+                eventText.text = "You recieved your salary of this month +" + moneyScript.loon.ToString("F2");
+                break;
+            case 3:
+                eventText.color = Color.green;
+                eventText.text = "You recieved your care allowens of this month +" + moneyScript.belastingdienst;
+                break;
+            case 4:
+                eventText.color = Color.red;
+                eventText.text = "You payed for your college for this month +" + moneyScript.loon;
+                break;
+            case 5:
+                eventText.color = Color.red;
+                eventText.text = "You payed for your care allowens for this month +" + moneyScript.zorgtoeslag;
+                break;
+            case 6:
+                eventText.color = Color.red;
+                eventText.text = "You payed your rent of this month +" + moneyScript.huisHuur;
+                break;
+        }
+    }
 }

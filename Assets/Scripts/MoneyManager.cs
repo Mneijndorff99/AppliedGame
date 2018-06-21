@@ -3,47 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoneyManager : MonoBehaviour {
+public class MoneyManager : MonoBehaviour
+{
 
     float startingMoney;
 
-	// Use this for initialization
-	void Start () 
+    public Text testMoney;
+
+    public float studieFin;
+    public float loon;
+    public float belastingdienst;
+    public float studieBetalen;
+    public float zorgtoeslag;
+    public float huisHuur;
+
+    // Use this for initialization
+    void Start()
     {
         startingMoney = 800f;
-	}
-	
-	// Update is called once per frame
+        studieFin = 487.11f;
+        loon = Random.Range(250f, 300f);
+        belastingdienst = 95f;
+        studieBetalen = 189.90f;
+        zorgtoeslag = 124.80f;
+        huisHuur = 740f;
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        testMoney.text = "€" + " " + startingMoney;
+    }
 
     public void StudieFin()
     {
-        startingMoney = startingMoney + 487.11f;
+        startingMoney = startingMoney + studieFin;
     }
 
     public void Loon()
     {
-        startingMoney = startingMoney + 294.60f;
+        startingMoney = startingMoney + loon;
     }
 
     public void Belastingsdients()
     {
-        startingMoney = startingMoney + 95f;
+        startingMoney = startingMoney + belastingdienst;
     }
 
     public void StudieBetalen()
     {
-        startingMoney = startingMoney - 189.90f;
+        startingMoney = startingMoney - studieBetalen;
     }
 
     public void Zorgtoeslag()
     {
-        startingMoney = startingMoney - 124.80f;
+        startingMoney = startingMoney - zorgtoeslag;
     }
 
     public void HuisHuur()
     {
-        startingMoney = startingMoney - 740f;
+        startingMoney = startingMoney - huisHuur;
     }
 
 

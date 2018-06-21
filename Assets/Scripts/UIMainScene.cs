@@ -12,6 +12,7 @@ public class UIMainScene : MonoBehaviour {
 
     public GameObject foodTab;
     public GameObject furnitureTab;
+    public GameObject assesorieTab;
 
     public GameObject infoPanel;
 
@@ -62,9 +63,15 @@ public class UIMainScene : MonoBehaviour {
         PlayerManager.money = PlayerManager.money -price;
     }
 
-    public void AddedFood(float addFoodTotal)
+    public void AddedFoodHealthy(float addFoodTotal)
     {
         PlayerManager.foodBar += addFoodTotal;
+        PlayerManager.moodbar += addFoodTotal / 2;
+    }
+
+    public void AddedFoodUnhealthy(float addFoodTotal)
+    {
+        PlayerManager.foodBar -= addFoodTotal;
         PlayerManager.moodbar += addFoodTotal / 2;
     }
 
@@ -72,13 +79,22 @@ public class UIMainScene : MonoBehaviour {
     {
         foodTab.SetActive(true);
         furnitureTab.SetActive(false);
+        assesorieTab.SetActive(false);
     }
 
     public void FurnitureTab()
     {
         furnitureTab.SetActive(true);
         foodTab.SetActive(false);
+        assesorieTab.SetActive(false);
     }    
+
+    public void AssesorieTab()
+    {
+        assesorieTab.SetActive(true);
+        furnitureTab.SetActive(false);
+        foodTab.SetActive(false);
+    }
     
     public void AddFurniture(string furnitureName)
     {

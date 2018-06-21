@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 3435
+  controlID: 17331
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 3391
+  controlID: 17311
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1088
     height: 441
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 3371
+  controlID: 17312
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,8 +201,8 @@ MonoBehaviour:
     y: 0
     width: 761
     height: 441
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 3392
+  controlID: 17246
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -414,10 +414,10 @@ MonoBehaviour:
     height: 420
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 16f4fdffdaf4fdfff6f6fdff00f7fdffe6fdfdff9424feff32f7ffff9efbffff00000000722c000002470000
+    scrollPos: {x: 0, y: 61}
+    m_SelectedIDs: 46b10000
+    m_LastClickedID: 45382
+    m_ExpandedIDs: 7e68f8ff5a84f8ff5085f8ffaa88f8ff40e8f8ffb4eff8ffd24df9ff3851f9ffec5bf9ff6a67f9ffda8ef9ff6c95f9ffb89df9ffe2a0fcff16f9fcffba42fdff8092fdffbea8fdffaaa9fdff2089feffa28efeff72f4ffff60f9ffff9efbffff000000003c2e0000d0310000043200001a32000084320000aa3200007c330000a2330000023400000a340000243400003e3400007c3400009e3400002c400000e440000092540000b85400003e59000048590000dc5a00009c5b0000265c0000907a0000947b0000667c0000f07c0000147e0000ea7f0000748000000e8c0000de9300007a94000082a100001ea3000050a3000074b000005ab1000062b1000034b20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -468,14 +468,14 @@ MonoBehaviour:
     height: 420
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1132.1642970295295
+  lastFramingTime: 7335.200072059272
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.9062743, y: 1.4938598, z: 89.97949}
+    m_Target: {x: -0.5107113, y: -2.6964529, z: 90.03223}
     speed: 2
-    m_Value: {x: 0.9062743, y: 1.4938598, z: 89.97949}
+    m_Value: {x: -0.5107113, y: -2.6964529, z: 90.03223}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -503,9 +503,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.2887554
+    m_Target: 7.1620626
     speed: 2
-    m_Value: 6.2887554
+    m_Value: 7.1620626
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -583,18 +583,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scene's
+    - Assets/ItemPictures/Rest
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scene's
+  - Assets/ItemPictures/Rest
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\sw3gq\Documents\GitHub\AppliedGame
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 122a0000
-    m_LastClickedID: 10770
+    m_SelectedIDs: 402a0000
+    m_LastClickedID: 10816
     m_ExpandedIDs: 0000000052290000d229000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -675,7 +675,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 44}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 115
 --- !u!114 &19
