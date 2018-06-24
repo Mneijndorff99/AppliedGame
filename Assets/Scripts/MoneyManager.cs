@@ -30,10 +30,10 @@ public class MoneyManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        testMoney.text = "€" + " " + startingMoney;
-    }
+    //void Update()
+    //{
+    //    testMoney.text = "€" + " " + startingMoney;
+    //}
 
     public void StudieFin()
     {

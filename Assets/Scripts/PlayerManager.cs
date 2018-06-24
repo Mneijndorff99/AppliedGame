@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour {
 
     public static float foodBar = 100;
     public static float moodbar = 150;
     public static int money;
+
 
     int happyNessDown = 1;
 
@@ -20,13 +22,9 @@ public class PlayerManager : MonoBehaviour {
 
     public Image disPlayMood;
 
-    private void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update () {
+
         foodBar -= 1 * Time.deltaTime;
         foodSlider.value = foodBar;
 
@@ -55,6 +53,11 @@ public class PlayerManager : MonoBehaviour {
         {
             happyNessDown = 3;
             disPlayMood.sprite = sad;
+        }
+
+        if(foodBar <= 0)
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 }

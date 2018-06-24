@@ -15,6 +15,12 @@ TagManager:
   - Couch
   - Lamp
   - Refrigerator
+  - TVBtn
+  - BedBtn
+  - TableBtn
+  - ChairBtn
+  - MirrorBtn
+  - CouchBtn
   layers:
   - Default
   - TransparentFX
